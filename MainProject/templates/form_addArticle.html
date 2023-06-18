@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block mainStyle %}
+<link rel="stylesheet" href="{% static 'css/article_form.css'%}">
+
+{% endblock mainStyle %}
+
+{% block main %}
+ <div class="container" style="text-align: center">
+  <form action="{% url 'blog:blog_create' %}" method="post" enctype="multipart/form-data">
+   {% csrf_token %}
+   {{ form.as_p }}
+   <button type="submit">Submit</button>
+  </form>
+ </div>
+{% endblock main %}

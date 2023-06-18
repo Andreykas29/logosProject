@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block mainStyle %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock mainStyle %}
+
+{% block main %}
+<div class="main">
+            <div class="container">
+               <div class="jumbotron">
+                  <h2 class="">
+                  Ласкаво просимо до магазину для домашніх улюбленців!</h1>
+               </div>
+               <div class="sliider">
+                  <div id="carouselExample" class="carousel slide" data-ride="carousel">
+                     <h2 class="text-center">Наші клієнти</h2>
+                     <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-indicators">
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner">
+                           <div class="carousel-item active">
+                              <img src="{% static 'img/dog.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+                           </div>
+                           <div class="carousel-item">
+                              <img src="{% static 'img/cat.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+                           </div>
+                           <div class="carousel-item">
+                              <img src="{% static 'img/rabbit.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+                           </div>
+                           <div class="carousel-item">
+                              <img src="{% static 'img/hamster.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+                           </div>
+                           <div class="carousel-item">
+                              <img src="{% static 'img/guinea.jpg' %}" class="d-block w-100 img-fluid" alt="...">
+                           </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                     </div>
+                  </div>
+                  <div class="additional-info">
+                     <h2>Переваги нашого магазину</h2>
+                     <ul class="advantages-list">
+                        <li>Широкий асортимент товарів для всіх видів домашніх улюбленців.</li>
+                        <li>Високоякісні товари від надійних виробників.</li>
+                        <li>Доступні ціни і регулярні знижки та акції.</li>
+                        <li>Швидка доставка прямо до вашого дверей.</li>
+                        <li>Корисна та дружня підтримка клієнтів, готова відповісти на всі ваші запитання.</li>
+                        <li>Зручна система онлайн-замовлень та оплати.</li>
+                     </ul>
+                     <p>Ми прагнемо забезпечити найкращий досвід для вас та вашого домашнього улюбленця. Придбайте високоякісні товари для догляду, гри та харчування вашого улюбленця в магазині!</p>
+                     <form action="{% url 'shop:main_shop' %}">
+                        <button type="submit"  class="btn btn-primary btn-lg">Замовити</button>
+                     </form>
+                  </div>
+               </div>
+               <div class="map">
+                  <div class="container">
+                     <h2>Ми на карті:</h2>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.215483221819!2d24.017153176869368!3d49.83840853124252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add70fa2c2b45%3A0x5f11ad5efa4909fc!2z0J_QsNGA0Log0ZbQvC4g0IbQstCw0L3QsCDQpNGA0LDQvdC60LA!5e0!3m2!1suk!2sua!4v1684184805161!5m2!1suk!2sua" width="100%" height="450" style=";" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+{% endblock main %}
+
+
+
+
+

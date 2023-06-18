@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mainStyle %}
+<link rel="stylesheet" href="{% static 'css/blog.css'%}">
+{% endblock mainStyle %}
+
+{% block main %}
+         <!-- Article main -->
+
+
+
+         <div class="main-article">
+            <div class="container">
+               <div class="row">
+                  {% for obj in page_obj %}
+
+                  <div class="col-lg-8 art">
+                     <h2>{{ obj.title }}</h2>
+                     <p class="text-muted">Дата публікації: {{ obj.date }}</p>
+                     {% if obj.image %}
+                     <img src="{{ obj.image.url }}" class="img-fluid mb-3" alt="Зображення статті" style="width: 40%;height: 50%">
+                     {% endif %}
+                     <p> {{ obj.description }}</p>
+                     <form action="" method="">
+                        <a href="{% url 'blog:blog_details' obj.id %}" class="btn btn-primary">Детальніше</a>
+                     </form>
+
+                  </div>
+                  {% endfor %}
+<div class="container" style="text-align: center">
+    <nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+              {% if page_obj.has_previous %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1">Previous</a>
+    </li>
+      {% endif %}
+      {% if page_obj.has_next %}
+    <li class="page-item"><a class="page-link" href="#">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+        {% endif %}
+      {% if page_obj.has_next %}
+    <li class="page-item">
+      <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+    </li>
+      {% endif %}
+  </ul>
+</nav>
+</div>
+ </div>
+                 <form action="" class="form_create" style="text-align: center;margin-top: 25px">
+                    <a href="{% url 'blog:blog_create' %}" class="btn btn-primary">Create Post</a>
+                </form>
+            </div>
+         </div>
+{% endblock main %}

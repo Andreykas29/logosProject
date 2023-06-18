@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block mainStyle %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock mainStyle %}
+
+{% block main %}
+         <!-- main about -->
+         <div class="main-about">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 offset-lg-2">
+                     <h2 class="title_about">Про автора</h2>
+                     <img src="{% static 'img/abb.jpg'%}" class="img-fluid mb-3 about_img rounded-circle" alt="Фото автора">
+                     <p>Студент групи КН-208</p>
+                     <ul>
+                        <li>Христюк Андрій</li>
+                        <li>Email: andreykaas29@gmail.com</li>
+                        <li>Телефон: 0934843828</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+{% endblock main %}
+
+
+
+
+
+

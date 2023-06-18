@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block mainStyle %}
+<link rel="stylesheet" href="{% static 'css/items.css'%}">
+{% endblock mainStyle %}
+{% block customStyle %}
+<link rel="stylesheet" href="{% static 'css/custom_items.css'%}">
+{% endblock customStyle %}
+{% block main %}
+<!-- Items -->
+<div class="main-items">
+   <div class="container">
+      <div class="wrap-meal">
+         <h2 class="meal">Харчування</h2>
+         <div class="container text-center">
+            {% for  obj in feed_prod %}
+            {% if forloop.counter0|divisibleby:3 %}
+            <div class="row">
+               {% endif %}
+               <div class="card" style="width: 18rem;">
+                  {% if obj.image %}
+                  <img class="card-img-top" src="{{ obj.image.url }} " alt="Card image cap">
+                  {% endif %}
+                  <div class="card-body">
+                     <h5 class="card-title">{{ obj.title }}</h5>
+                     <p class="card-text obj_desc">{{ obj.description }}</p>
+                     <p class="card-text obj_type">Вид: {{ obj.type }}</p>
+                     <p class="card-text obj_price">Ціна: {{ obj.price }}</p>
+                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+               </div>
+               {% if forloop.counter|divisibleby:3 or forloop.last %}
+            </div>
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="wrap-accessories">
+         <h2 class="meal">Аксесуари</h2>
+         <div class="container text-center">
+            {% for  obj in accessories_prod %}
+            {% if forloop.counter0|divisibleby:3 %}
+            <div class="row">
+               {% endif %}
+               <div class="card" style="width: 18rem;">
+                  {% if obj.image %}
+                  <img class="card-img-top" src="{{ obj.image.url }} " alt="Card image cap">
+                  {% endif %}
+                  <div class="card-body">
+                     <h5 class="card-title">{{ obj.title }}</h5>
+                     <p class="card-text obj_desc">{{ obj.description }}</p>
+                     <p class="card-text obj_type">Вид: {{ obj.type }}</p>
+                     <p class="card-text obj_price">Ціна: {{ obj.price }}</p>
+                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+               </div>
+               {% if forloop.counter|divisibleby:3 or forloop.last %}
+            </div>
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <div class="wrap-pill">
+         <h2 class="meal">Ліки та вітаміни</h2>
+         <div class="container text-center">
+            {% for  obj in peel_prod %}
+            {% if forloop.counter0|divisibleby:3 %}
+            <div class="row">
+               {% endif %}
+               <div class="card" style="width: 18rem;">
+                  {% if obj.image %}
+                  <img class="card-img-top" src="{{ obj.image.url }} " alt="Card image cap">
+                  {% endif %}
+                  <div class="card-body">
+                     <h5 class="card-title">{{ obj.title }}</h5>
+                     <p class="card-text obj_desc">{{ obj.description }}</p>
+                     <p class="card-text obj_type">Вид: {{ obj.type }}</p>
+                     <p class="card-text obj_price">Ціна: {{ obj.price }}</p>
+                     <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+               </div>
+               {% if forloop.counter|divisibleby:3 or forloop.last %}
+            </div>
+            {% endif %}
+            {% endfor %}
+         </div>
+      </div>
+      <form action="" class="form_create" style="text-align: center;margin-top: 25px">
+                    <a href="{% url 'shop:shop_create' %}" class="btn btn-primary">Create Post</a>
+                </form>
+   </div>
+</div>
+{% endblock main %}

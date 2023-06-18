@@ -1,0 +1,38 @@
+.card {
+    width: 100%;
+    margin-right: 10%;
+
+}
+
+.card>img {
+ object-fit: contain;
+    height: 350px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.card {
+background: #ffffff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+        margin-bottom: 30px;
+    }
+@media (max-width: 991px) {
+    .row {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 766px) {
+    .row {
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .card {
+        margin-bottom: 30px;
+    }
+}
