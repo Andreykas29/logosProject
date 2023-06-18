@@ -13,21 +13,21 @@ from django.core.paginator import Paginator
 
 
 def home_page(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html') #домашня сторінка
 
-
+# сторінка для відображення інформації про автора
 def aboutPage(request):
     return render(request, 'about.html')
 
-
+# відображення сторінки "Про нас"
 def aboutUsPage(request):
     return render(request, 'about_us.html')
 
-
+# відображення блогу
 def blogPage(request):
     return render(request, 'blog.html')
 
-
+# функція, яка повертає всі об'єкти з адмінки
 def bloglist(request):
     objects = Blog.objects.all()
     paginator = Paginator(objects, 3)
@@ -39,7 +39,7 @@ def bloglist(request):
     }
     return render(request, 'blog.html', context)
 
-
+# інформація про кожен об'єкт окремо
 def blog_detail(request, id):
     try:
         instance = get_object_or_404(Blog, id=id)
@@ -49,7 +49,7 @@ def blog_detail(request, id):
 
     return render(request, 'detail_blog.html', {'obj':instance})
 
-
+# створення блогу
 def blog_create(request):
     if request.method == 'POST':
         form = BlogCreateForm(request.POST, request.FILES)

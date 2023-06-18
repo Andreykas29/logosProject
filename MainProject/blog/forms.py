@@ -1,6 +1,6 @@
 from blog.models import Blog
 from django import forms
-
+#Форма для створення блогу
 class BlogCreateForm(forms.ModelForm):
     class Meta:
         model = Blog

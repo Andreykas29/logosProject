@@ -3,7 +3,7 @@ from shop.models import Product
 from shop.forms import ProductCreateForm
 # Create your views here.
 
-
+# відображення продуктів по категоріям
 def itemsPage(request):
     instance = Product.objects.all()
     feed_prod = instance.filter(product_kind='fd')
@@ -18,7 +18,7 @@ def itemsPage(request):
 
     return render(request, 'items.html', context)
 
-
+# створення об'єктів
 def create_item(request):
     if request.method == 'POST':
         form = ProductCreateForm(request.POST, request.FILES)

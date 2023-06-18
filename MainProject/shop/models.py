@@ -1,10 +1,10 @@
 from django.db import models
 
 # Create your models here.
-
+# посилання для зберігання медіа
 def uploads_url(instance,filename):
     return f'{instance.type}/{filename}'
-
+# модель товару
 class Product(models.Model):
     types = [
         ('cat', 'cat'),

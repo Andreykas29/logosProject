@@ -1,7 +1,7 @@
 from django import forms
 from shop.models import Product
 
-
+# форма створення товару
 class ProductCreateForm(forms.ModelForm):
     class Meta:
         model = Product
